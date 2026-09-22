@@ -155,19 +155,21 @@
     .opportunity .section-cta p{color:#e5f2e8}
     @media(max-width:700px){.section-cta{align-items:stretch;flex-direction:column;gap:17px;margin-top:32px;padding-top:23px}.section-cta p{font-size:17px}.section-cta .btn{width:100%}}
     @media(prefers-reduced-motion:reduce){.gift-book{transition:none}}
-    .registration-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:#042d27d9;backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
+    .registration-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:12px 24px;background:#042d27d9;backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
     .registration-modal.is-open{opacity:1;visibility:visible}
-    .registration-modal__dialog{position:relative;display:grid;grid-template-rows:auto minmax(0,1fr);width:min(720px,100%);height:min(760px,calc(100dvh - 48px));overflow:hidden;overscroll-behavior:contain;background:#f8faf7;border:1px solid #d1e2d6;border-radius:8px;box-shadow:0 28px 80px #001d1899;transform:translateY(18px) scale(.985);transition:transform .22s ease}
+    .registration-modal__dialog{position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr);width:min(720px,100%);height:min(840px,calc(100dvh - 24px));overflow:hidden;overscroll-behavior:contain;background:#f8faf7;border:1px solid #d1e2d6;border-radius:8px;box-shadow:0 28px 80px #001d1899;transform:translateY(18px) scale(.985);transition:transform .22s ease}
     .registration-modal.is-open .registration-modal__dialog{transform:none}
-    .registration-modal__header{padding:28px 76px 21px 30px;border-bottom:1px solid #d1e2d6}
+    .registration-modal__header{padding:20px 76px 15px 30px;border-bottom:1px solid #d1e2d6}
     .registration-modal__eyebrow{display:block;margin-bottom:6px;color:var(--pink);font-size:11px;font-weight:800;text-transform:uppercase}
     .registration-modal__title{margin:0;color:var(--green);font-size:clamp(24px,3.3vw,34px);line-height:1.18}
     .registration-modal__close{position:absolute;z-index:2;top:18px;right:18px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid #9fbeaa;border-radius:50%;background:#fff;color:var(--green);font:400 31px/1 Arial,sans-serif;cursor:pointer;transition:background .2s,color .2s,transform .2s}
     .registration-modal__close:hover{background:var(--green);color:#fff;transform:rotate(4deg)}
-    .registration-widget{height:auto!important;min-height:0;overflow-y:auto;padding:18px 24px 28px;background:#fff}
-    .registration-widget iframe{display:block;width:100%!important;height:620px!important;min-height:620px!important;overflow:auto;-webkit-overflow-scrolling:touch;border:0}
+    .registration-modal__hint{padding:9px 30px;background:#e9f2ec;color:#315f4f;font-size:12px;line-height:1.4;font-weight:700;border-bottom:1px solid #d1e2d6}
+    .registration-modal__hint span{color:var(--pink)}
+    .registration-widget{height:auto!important;min-height:0;overflow-y:scroll;scrollbar-gutter:stable;scrollbar-color:#789e8b #edf3ef;overscroll-behavior:contain;padding:12px 18px 34px 24px;background:#fff}
+    .registration-widget iframe{display:block;width:100%!important;height:780px!important;min-height:780px!important;overflow:hidden;border:0}
     body.registration-open{overflow:hidden}
-    @media(max-width:560px){.registration-modal{place-items:stretch;padding:0}.registration-modal__dialog{width:100%;height:100dvh;border:0;border-radius:0}.registration-modal__header{padding:20px 68px 16px 18px;background:#f8faf7}.registration-modal__title{font-size:23px}.registration-modal__close{position:fixed;top:11px;right:12px}.registration-widget{padding:10px 8px max(16px,env(safe-area-inset-bottom))}.registration-widget iframe{height:760px!important;min-height:760px!important}}
+    @media(max-width:560px){.registration-modal{place-items:stretch;padding:0}.registration-modal__dialog{width:100%;height:100dvh;border:0;border-radius:0}.registration-modal__header{padding:16px 68px 12px 18px;background:#f8faf7}.registration-modal__title{font-size:23px}.registration-modal__close{position:fixed;top:9px;right:12px}.registration-modal__hint{padding:8px 18px;font-size:11px}.registration-widget{padding:8px 4px max(24px,env(safe-area-inset-bottom)) 8px}.registration-widget iframe{height:820px!important;min-height:820px!important}}
     @media(prefers-reduced-motion:reduce){.registration-modal,.registration-modal__dialog,.registration-modal__close{transition:none}}
   </style>
 </head>
@@ -193,6 +195,7 @@
     <div class="registration-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="registration-modal-title">
       <button class="registration-modal__close" id="registration-modal-close" type="button" aria-label="Закрыть форму регистрации">&times;</button>
       <div class="registration-modal__header"><span class="registration-modal__eyebrow">24 сентября · 19:00 · онлайн</span><h2 class="registration-modal__title" id="registration-modal-title">Регистрация на мастер-класс MyBotica</h2></div>
+      <div class="registration-modal__hint">Прокрутите форму вниз: <span>под кнопкой находятся обязательные согласия ↓</span></div>
       <div class="registration-widget"><script defer id="7490aba669f7bcc3172f0d93d5ff0627de075958" src="https://xeniabaranova-school.ru/pl/lite/widget/script?id=1658762"></script></div>
     </div>
   </div>
