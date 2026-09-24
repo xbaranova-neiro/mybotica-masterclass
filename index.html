@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#073f34">
   <meta name="description" content="24 сентября в 19:00 — мастер-класс о возможностях MyBotica. Создавайте ИИ-ботов для себя и клиентов.">
@@ -16,7 +17,7 @@
     html{scroll-behavior:smooth}
     body{margin:0;background:var(--light);color:var(--ink);font-family:Manrope,Arial,sans-serif;letter-spacing:0}
     img{display:block;max-width:100%}a{color:inherit;text-decoration:none}h1,h2,h3,p{margin-top:0}
-    .wrap{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+    .wrap{width:calc(100% - 48px);max-width:1180px;margin-left:auto;margin-right:auto;width:min(1180px,calc(100% - 48px))}
     .top{position:absolute;inset:0 0 auto;z-index:10;color:#fff}
     .top-inner{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #ffffff30}
     .logo{width:177px;height:auto}
@@ -161,7 +162,7 @@
     .registration-modal.is-open .registration-modal__dialog{transform:none}
     .registration-modal__header{padding:20px 76px 15px 30px;border-bottom:1px solid #d1e2d6}
     .registration-modal__eyebrow{display:block;margin-bottom:6px;color:var(--pink);font-size:11px;font-weight:800;text-transform:uppercase}
-    .registration-modal__title{margin:0;color:var(--green);font-size:clamp(24px,3.3vw,34px);line-height:1.18}
+    .registration-modal__title{margin:0;color:#0a493d;color:var(--green);font-size:30px;font-size:clamp(24px,3.3vw,34px);line-height:1.18}
     .registration-modal__close{position:absolute;z-index:2;top:18px;right:18px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #9fbeaa;border-radius:50%;background:#fff;color:var(--green);font:400 31px/1 Arial,sans-serif;cursor:pointer;transition:background .2s,color .2s,transform .2s}
     .registration-modal__close:hover{background:var(--green);color:#fff;transform:rotate(4deg)}
     .registration-modal__hint{padding:9px 30px;background:#e9f2ec;color:#315f4f;font-size:12px;line-height:1.4;font-weight:700;border-bottom:1px solid #d1e2d6}
@@ -169,26 +170,25 @@
     .registration-widget{flex:1 1 auto;height:auto!important;min-height:0;overflow-y:auto;scrollbar-gutter:stable;scrollbar-color:#789e8b #edf3ef;overscroll-behavior:contain;padding:12px 18px 34px 24px;background:#fff}
     .registration-widget iframe{display:block;width:100%!important;height:780px!important;min-height:780px!important;overflow:hidden;border:0}
     body.registration-open{overflow:hidden}
-    @media(max-width:560px){.registration-modal{align-items:stretch;justify-content:stretch;padding:0}.registration-modal__dialog{width:100%;height:100vh;height:100dvh;max-height:none;border:0;border-radius:0}.registration-modal__header{padding:16px 68px 12px 18px;background:#f8faf7}.registration-modal__title{font-size:23px}.registration-modal__close{position:fixed;top:9px;right:12px}.registration-modal__hint{padding:8px 18px;font-size:11px}.registration-widget{padding:8px 4px 24px 8px;padding-bottom:max(24px,env(safe-area-inset-bottom))}.registration-widget iframe{height:820px!important;min-height:820px!important}}
+    @media(max-width:560px){.registration-modal{align-items:stretch;justify-content:flex-start;padding:0}.registration-modal__dialog{width:100%;height:100vh;height:100dvh;max-height:none;border:0;border-radius:0}.registration-modal__header{padding:16px 68px 12px 18px;background:#f8faf7}.registration-modal__title{font-size:23px}.registration-modal__close{position:fixed;top:9px;right:12px}.registration-modal__hint{padding:8px 18px;font-size:11px}.registration-widget{padding:8px 4px 24px 8px;padding-bottom:max(24px,env(safe-area-inset-bottom))}.registration-widget iframe{height:820px!important;min-height:820px!important}}
     @media(prefers-reduced-motion:reduce){.registration-modal,.registration-modal__dialog,.registration-modal__close{transition:none}}
   </style>
 </head>
 <body>
-  <script>document.addEventListener('click',(event)=>{const opener=event.target.closest('[data-registration-open]');if(!opener)return;event.preventDefault();const modal=document.getElementById('registration-modal');if(!modal)return;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('registration-open');requestAnimationFrame(()=>document.getElementById('registration-modal-close')?.focus())},true)</script>
-  <header class="top"><div class="wrap top-inner"><a href="#top" aria-label="MyBotica, наверх"><img class="logo" src="https://mybotica.pro/assets/images/logo.svg" alt="MyBotica"></a><nav class="nav" aria-label="Навигация"><a href="#platform">Платформа</a><a href="#practice">На мастер-классе</a><a href="#opportunity">Возможности</a><a class="nav-register" href="#registration" data-registration-open>Регистрация</a></nav></div></header>
+  <header class="top"><div class="wrap top-inner"><a href="#top" aria-label="MyBotica, наверх"><img class="logo" src="https://mybotica.pro/assets/images/logo.svg" alt="MyBotica"></a><nav class="nav" aria-label="Навигация"><a href="#platform">Платформа</a><a href="#practice">На мастер-классе</a><a href="#opportunity">Возможности</a><a class="nav-register" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>Регистрация</a></nav></div></header>
   <main>
-    <section class="hero" id="top"><div class="wrap hero-inner"><span class="hero-watermark" aria-hidden="true">ИИ</span><div class="hero-copy"><div class="hero-kicker"><i class="dot"></i>Новая платформа MyBotica · онлайн-мастер-класс</div><h1>Как создавать <span class="nowrap">ИИ-ботов</span> <em>для&nbsp;себя и&nbsp;клиентов</em></h1><p class="hero-lead">Покажем, как собрать бота под конкретную задачу, использовать его в работе и превратить готовое решение в услугу или продукт.</p><a class="hero-gift" href="#gift"><img src="assets/guide-cover.webp" alt="" width="50" height="71"><span class="hero-gift-copy"><span class="hero-gift-label">Подарок за регистрацию</span><strong>Практический PDF-гайд «Сильный ИИ-бот»</strong><span class="hero-gift-more">Подробнее о подарке</span></span></a><div class="hero-actions"><a class="btn btn-pink" href="#registration" data-registration-open>К регистрации</a><a class="btn btn-line" href="#practice">Программа мастер-класса</a></div></div><div class="hero-dragon" aria-hidden="true"><video autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/red-dragon-happy-poster.jpg" width="720" height="1280"><source src="assets/red-dragon-happy.mp4" type="video/mp4"></video><img class="dragon-still" src="assets/red-dragon-happy-poster.jpg" alt="" width="720" height="1280"></div></div></section>
+    <section class="hero" id="top"><div class="wrap hero-inner"><span class="hero-watermark" aria-hidden="true">ИИ</span><div class="hero-copy"><div class="hero-kicker"><i class="dot"></i>Новая платформа MyBotica · онлайн-мастер-класс</div><h1>Как создавать <span class="nowrap">ИИ-ботов</span> <em>для&nbsp;себя и&nbsp;клиентов</em></h1><p class="hero-lead">Покажем, как собрать бота под конкретную задачу, использовать его в работе и превратить готовое решение в услугу или продукт.</p><a class="hero-gift" href="#gift"><img src="assets/guide-cover.webp" alt="" width="50" height="71"><span class="hero-gift-copy"><span class="hero-gift-label">Подарок за регистрацию</span><strong>Практический PDF-гайд «Сильный ИИ-бот»</strong><span class="hero-gift-more">Подробнее о подарке</span></span></a><div class="hero-actions"><a class="btn btn-pink" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>К регистрации</a><a class="btn btn-line" href="#practice">Программа мастер-класса</a></div></div><div class="hero-dragon" aria-hidden="true"><video autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/red-dragon-happy-poster.jpg" width="720" height="1280"><source src="assets/red-dragon-happy.mp4" type="video/mp4"></video><img class="dragon-still" src="assets/red-dragon-happy-poster.jpg" alt="" width="720" height="1280"></div></div></section>
     <div class="date-band"><div class="wrap date-inner"><time class="date-big" datetime="2026-09-24">24 сентября</time><span class="date-divider" aria-hidden="true"></span><time class="date-big" datetime="19:00">19:00</time><span class="date-side">Прямой эфир · онлайн</span></div></div>
     <section class="platform section" id="platform"><div class="wrap">
       <div class="platform-top"><div><div class="eyebrow">Что такое MyBotica</div><h2 class="title">Ваша идея превращается в рабочего бота.</h2><p class="intro">В новой платформе можно создать ИИ-бота без программирования: дать ему роль, загрузить знания, проверить диалог и подготовить к работе.</p></div><div class="emotion-dragon" aria-hidden="true"><video autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/dragon-wave.jpg" width="640" height="900"><source src="assets/dragon-wave.mp4" type="video/mp4"></video><img class="dragon-still" src="assets/dragon-wave.jpg" alt="" width="640" height="900" loading="lazy"></div></div>
       <div class="ways" aria-label="Три возможности MyBotica"><div class="way"><div class="way-num">01 / ВАШ БОТ</div><h3>Создавать</h3><p>От идеи до рабочего ИИ-бота без кода: задайте роль, добавьте знания, проверьте диалог.</p></div><div class="way"><div class="way-num">02 / В РАБОТЕ</div><h3>Применять</h3><p>Передайте боту ответы, подбор, заявки и запись. Он помогает клиентам, пока вы заняты другим.</p></div><div class="way"><div class="way-num">03 / НА ПЛОЩАДКЕ</div><h3>Продавать</h3><p>Публикуйте готовые решения или собирайте ботов под задачи заказчиков.</p></div></div>
       <div class="platform-visual"><div class="visual-left"><span class="visual-label">Пример сценария · бот-администратор</span><h3 class="visual-head">Не просто отвечает. Помогает человеку дойти до записи.</h3><div class="build-flow"><div class="build-step"><b>01</b><strong>Роль</strong><small>Администратор</small></div><div class="build-step"><b>02</b><strong>Знания</strong><small>Услуги и расписание</small></div><div class="build-step"><b>03</b><strong>Диалог</strong><small>Заявка или запись</small></div></div></div><div class="chat" aria-label="Пример диалога с ботом"><div class="chat-head"><i></i>Бот-администратор <span>на связи</span></div><div class="bubble user">Хочу записаться на консультацию</div><div class="bubble bot">Конечно. Подскажите, какая услуга вас интересует?</div><div class="bubble user">Первичная консультация</div><div class="chat-state">Дальше бот уточнит время и оформит заявку</div></div></div>
-      <div class="section-cta"><p>Посмотрите, как бот собирается и работает в реальном времени.</p><a class="btn btn-pink" href="#registration" data-registration-open>Зарегистрироваться</a></div>
+      <div class="section-cta"><p>Посмотрите, как бот собирается и работает в реальном времени.</p><a class="btn btn-pink" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>Зарегистрироваться</a></div>
     </div></section>
-    <section class="practice section" id="practice"><div class="wrap"><div class="practice-top"><div><div class="eyebrow">Практика мастер-класса</div><h2 class="title">Пять ботов. Пять знакомых задач.</h2></div><p>На практике соберём бота-администратора, а через другие сценарии покажем, насколько разными могут быть решения.</p></div><article class="feature"><span class="feature-num">01</span><div class="feature-copy"><span class="feature-label">Соберём вместе</span><h3>Бот-администратор</h3><p>Собирает данные, помогает выбрать услугу и время, оформляет заявку или запись.</p></div><picture class="poses-dragon" aria-hidden="true"><img src="assets/dragon-coffee.webp" alt="" width="560" height="788" loading="lazy"></picture></article><div class="bots"><article class="bot"><span class="bot-num">02</span><h3>Бот-продавец</h3><p>Уточняет запрос, помогает выбрать товар или тариф и ведёт к покупке или менеджеру.</p></article><article class="bot"><span class="bot-num">03</span><h3>Бот поддержки</h3><p>Отвечает по базе знаний, решает типовой вопрос и передаёт сложное обращение специалисту.</p></article><article class="bot"><span class="bot-num">04</span><h3>Персональный ассистент</h3><p>Структурирует задачи, планы и повторяющиеся рабочие действия.</p></article><article class="bot"><span class="bot-num">05</span><h3>SMM-бот</h3><p>Собирает вводные и готовит черновики с учётом темы, формата и голоса бренда.</p></article></div><div class="section-cta"><p>Соберём первого бота вместе и разберём другие рабочие сценарии.</p><a class="btn btn-pink" href="#registration" data-registration-open>Зарегистрироваться</a></div></div></section>
-    <section class="opportunity section" id="opportunity"><div class="wrap"><div class="eyebrow">Не только помощник</div><h2 class="title">Сделайте ботов новой услугой или продуктом.</h2><p class="intro">MyBotica даёт несколько путей: использовать решения в своём деле, создавать их для других и выходить с ними на площадку.</p><div class="roles"><div class="role"><span class="role-counter" aria-hidden="true">01</span><span class="role-num">ГОТОВЫЙ ПРОДУКТ</span><h3>Продавайте в каталоге</h3><p>Соберите бота для типовой задачи и опубликуйте готовое решение на площадке.</p></div><div class="role"><span class="role-counter" aria-hidden="true">02</span><span class="role-num">РАБОТА С КЛИЕНТОМ</span><h3>Берите заказы</h3><p>Настраивайте ИИ-ботов под конкретный бизнес: от первого диалога до запуска.</p></div><div class="role"><span class="role-counter" aria-hidden="true">03</span><span class="role-num">ПОДРЯДЧИК MYBOTICA</span><h3>Показывайте свои проекты</h3><p>Разместите профиль и портфолио в каталоге специалистов платформы.</p></div></div><div class="section-cta"><p>Найдите свой способ работать с ИИ-ботами на мастер-классе.</p><a class="btn btn-pink" href="#registration" data-registration-open>Зарегистрироваться</a></div></div></section>
-    <section class="gift section" id="gift"><div class="wrap gift-inner"><div class="gift-copy"><div class="eyebrow">Подарок за регистрацию</div><h2 class="title">Сильный ИИ-бот начинается с хорошего плана.</h2><p class="gift-lead">Дарим практический PDF-гайд, с которым вы сможете продумать своего бота: от первой задачи и базы знаний до рабочего диалога и проверки перед запуском.</p><div class="gift-benefits" aria-label="Что внутри гайда"><span>Паспорт и роль бота</span><span>Шаблон инструкции</span><span>5 примеров под разные задачи</span><span>20 вопросов для проверки</span></div><div class="gift-actions"><a class="btn btn-pink" href="#registration" data-registration-open>Забрать после регистрации</a><p class="gift-note">После регистрации бот пригласит вас в канал MyBotica. Там будет ждать подарок.</p></div></div><div class="gift-art" aria-label="Обложка практического гайда Сильный ИИ-бот"><div class="gift-book"><img class="gift-cover" src="assets/guide-cover.webp" alt="Обложка гайда «Сильный ИИ-бот»" width="2480" height="3508" loading="lazy"></div><span class="gift-art-label">16 страниц · PDF-гайд</span></div></div></section>
-    <section class="registration-band" id="registration"><div class="wrap registration-inner"><div><span class="registration-date">24 сентября · 19:00 · онлайн</span><h2 class="registration-title">Увидимся на мастер-классе MyBotica</h2></div><button class="btn registration-status" type="button" data-registration-open>Зарегистрироваться</button></div></section>
+    <section class="practice section" id="practice"><div class="wrap"><div class="practice-top"><div><div class="eyebrow">Практика мастер-класса</div><h2 class="title">Пять ботов. Пять знакомых задач.</h2></div><p>На практике соберём бота-администратора, а через другие сценарии покажем, насколько разными могут быть решения.</p></div><article class="feature"><span class="feature-num">01</span><div class="feature-copy"><span class="feature-label">Соберём вместе</span><h3>Бот-администратор</h3><p>Собирает данные, помогает выбрать услугу и время, оформляет заявку или запись.</p></div><picture class="poses-dragon" aria-hidden="true"><img src="assets/dragon-coffee.webp" alt="" width="560" height="788" loading="lazy"></picture></article><div class="bots"><article class="bot"><span class="bot-num">02</span><h3>Бот-продавец</h3><p>Уточняет запрос, помогает выбрать товар или тариф и ведёт к покупке или менеджеру.</p></article><article class="bot"><span class="bot-num">03</span><h3>Бот поддержки</h3><p>Отвечает по базе знаний, решает типовой вопрос и передаёт сложное обращение специалисту.</p></article><article class="bot"><span class="bot-num">04</span><h3>Персональный ассистент</h3><p>Структурирует задачи, планы и повторяющиеся рабочие действия.</p></article><article class="bot"><span class="bot-num">05</span><h3>SMM-бот</h3><p>Собирает вводные и готовит черновики с учётом темы, формата и голоса бренда.</p></article></div><div class="section-cta"><p>Соберём первого бота вместе и разберём другие рабочие сценарии.</p><a class="btn btn-pink" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>Зарегистрироваться</a></div></div></section>
+    <section class="opportunity section" id="opportunity"><div class="wrap"><div class="eyebrow">Не только помощник</div><h2 class="title">Сделайте ботов новой услугой или продуктом.</h2><p class="intro">MyBotica даёт несколько путей: использовать решения в своём деле, создавать их для других и выходить с ними на площадку.</p><div class="roles"><div class="role"><span class="role-counter" aria-hidden="true">01</span><span class="role-num">ГОТОВЫЙ ПРОДУКТ</span><h3>Продавайте в каталоге</h3><p>Соберите бота для типовой задачи и опубликуйте готовое решение на площадке.</p></div><div class="role"><span class="role-counter" aria-hidden="true">02</span><span class="role-num">РАБОТА С КЛИЕНТОМ</span><h3>Берите заказы</h3><p>Настраивайте ИИ-ботов под конкретный бизнес: от первого диалога до запуска.</p></div><div class="role"><span class="role-counter" aria-hidden="true">03</span><span class="role-num">ПОДРЯДЧИК MYBOTICA</span><h3>Показывайте свои проекты</h3><p>Разместите профиль и портфолио в каталоге специалистов платформы.</p></div></div><div class="section-cta"><p>Найдите свой способ работать с ИИ-ботами на мастер-классе.</p><a class="btn btn-pink" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>Зарегистрироваться</a></div></div></section>
+    <section class="gift section" id="gift"><div class="wrap gift-inner"><div class="gift-copy"><div class="eyebrow">Подарок за регистрацию</div><h2 class="title">Сильный ИИ-бот начинается с хорошего плана.</h2><p class="gift-lead">Дарим практический PDF-гайд, с которым вы сможете продумать своего бота: от первой задачи и базы знаний до рабочего диалога и проверки перед запуском.</p><div class="gift-benefits" aria-label="Что внутри гайда"><span>Паспорт и роль бота</span><span>Шаблон инструкции</span><span>5 примеров под разные задачи</span><span>20 вопросов для проверки</span></div><div class="gift-actions"><a class="btn btn-pink" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>Забрать после регистрации</a><p class="gift-note">После регистрации бот пригласит вас в канал MyBotica. Там будет ждать подарок.</p></div></div><div class="gift-art" aria-label="Обложка практического гайда Сильный ИИ-бот"><div class="gift-book"><img class="gift-cover" src="assets/guide-cover.webp" alt="Обложка гайда «Сильный ИИ-бот»" width="2480" height="3508" loading="lazy"></div><span class="gift-art-label">16 страниц · PDF-гайд</span></div></div></section>
+    <section class="registration-band" id="registration"><div class="wrap registration-inner"><div><span class="registration-date">24 сентября · 19:00 · онлайн</span><h2 class="registration-title">Увидимся на мастер-классе MyBotica</h2></div><a class="btn registration-status" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>Зарегистрироваться</a></div></section>
   </main>
   <footer class="footer"><div class="wrap"><div class="footer-main"><div class="footer-brand"><a href="#top" aria-label="MyBotica, наверх"><img src="https://mybotica.pro/assets/images/logo.svg" alt="MyBotica"></a><div class="footer-entity"><span class="footer-label">Компания проекта</span><strong>ООО «МАЙБОТИКА»</strong><p>ИНН 0272937689<br>ОГРН 1260200017010</p></div></div><div class="footer-school"><span class="footer-label">Школа Ксении Барановой</span><strong>ИП Баранова Ксения Николаевна</strong><p>ИНН 027402381827<br>ОГРНИП 317028000116318</p><a class="footer-license" href="https://xeniabaranova-school.ru/license" target="_blank" rel="noopener noreferrer">Лицензия школы<b>№ Л035-01198-02/00172850 ↗</b></a></div><div class="footer-docs"><span class="footer-label">Документы MyBotica</span><nav aria-label="Документы MyBotica"><a href="https://mybotica.pro/privacy-policy" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a><a href="https://mybotica.pro/user-agreement" target="_blank" rel="noopener noreferrer">Условия предоставления услуг</a></nav><span class="footer-label">Документы школы</span><nav aria-label="Документы школы"><a href="https://xeniabaranova-school.ru/politica" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a><a href="https://xeniabaranova-school.ru/oferta_new" target="_blank" rel="noopener noreferrer">Публичная оферта</a></nav></div></div><div class="footer-bottom"><span>MyBotica · мастер-класс о возможностях платформы</span><span>24 сентября · 19:00 · онлайн</span></div></div></footer>
   <div class="registration-modal" id="registration-modal" aria-hidden="true">
@@ -200,65 +200,77 @@
     </div>
   </div>
   <script>
-    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const chat = document.querySelector('.chat');
-      chat.classList.add('animate-ready');
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          chat.classList.add('is-visible');
-          observer.disconnect();
-        }
-      }, { threshold: 0.35 });
-      observer.observe(chat);
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if ('IntersectionObserver' in window && !reducedMotion) {
+      var chat = document.querySelector('.chat');
+      if (chat) {
+        chat.classList.add('animate-ready');
+        var observer = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            chat.classList.add('is-visible');
+            observer.disconnect();
+          }
+        }, { threshold: 0.35 });
+        observer.observe(chat);
+      }
     }
 
-    const autoplayVideos = [...document.querySelectorAll('video[autoplay]')];
-    const playVideos = () => autoplayVideos.forEach((video) => {
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-      video.play().catch(() => {});
+    var autoplayVideos = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
+    var playVideos = function () {
+      autoplayVideos.forEach(function (video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        var playResult = video.play();
+        if (playResult && typeof playResult.catch === 'function') playResult.catch(function () {});
+      });
+    };
+    autoplayVideos.forEach(function (video) {
+      video.addEventListener('loadeddata', playVideos, false);
     });
-    autoplayVideos.forEach((video) => video.addEventListener('loadeddata', playVideos, { once: true }));
-    window.addEventListener('pageshow', playVideos);
-    document.addEventListener('visibilitychange', () => {
+    window.addEventListener('pageshow', playVideos, false);
+    document.addEventListener('visibilitychange', function () {
       if (!document.hidden) playVideos();
-    });
-    document.addEventListener('touchstart', playVideos, { once: true, passive: true });
+    }, false);
+    document.addEventListener('touchstart', playVideos, false);
     playVideos();
 
-    const registrationModal = document.getElementById('registration-modal');
-    const registrationDialog = registrationModal.querySelector('.registration-modal__dialog');
-    const registrationWidget = registrationModal.querySelector('.registration-widget');
-    const registrationClose = document.getElementById('registration-modal-close');
-    const registrationOpeners = document.querySelectorAll('[data-registration-open]');
-    let registrationTrigger = null;
+    var registrationModal = document.getElementById('registration-modal');
+    var registrationDialog = registrationModal.querySelector('.registration-modal__dialog');
+    var registrationWidget = registrationModal.querySelector('.registration-widget');
+    var registrationClose = document.getElementById('registration-modal-close');
+    var registrationOpeners = document.querySelectorAll('[data-registration-open]');
+    var registrationTrigger = null;
+    var nextFrame = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 0); };
 
-    const openRegistration = (event) => {
-      event?.preventDefault();
-      registrationTrigger = event?.currentTarget || document.activeElement;
+    var openRegistration = function (event) {
+      if (event && event.preventDefault) event.preventDefault();
+      registrationTrigger = event && event.currentTarget ? event.currentTarget : document.activeElement;
       registrationModal.classList.add('is-open');
       registrationModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('registration-open');
       registrationWidget.scrollTop = 0;
-      requestAnimationFrame(() => registrationClose.focus());
+      nextFrame(function () { registrationClose.focus(); });
     };
 
-    const closeRegistration = () => {
+    var closeRegistration = function () {
       registrationModal.classList.remove('is-open');
       registrationModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('registration-open');
-      registrationTrigger?.focus();
+      if (registrationTrigger && registrationTrigger.focus) registrationTrigger.focus();
     };
 
-    registrationOpeners.forEach((opener) => opener.addEventListener('click', openRegistration));
-    registrationClose.addEventListener('click', closeRegistration);
-    registrationModal.addEventListener('click', (event) => {
+    Array.prototype.forEach.call(registrationOpeners, function (opener) {
+      opener.addEventListener('click', openRegistration, false);
+    });
+    registrationClose.addEventListener('click', closeRegistration, false);
+    registrationModal.addEventListener('click', function (event) {
       if (!registrationDialog.contains(event.target)) closeRegistration();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && registrationModal.classList.contains('is-open')) closeRegistration();
-    });
+    }, false);
+    document.addEventListener('keydown', function (event) {
+      var isEscape = event.key === 'Escape' || event.keyCode === 27;
+      if (isEscape && registrationModal.classList.contains('is-open')) closeRegistration();
+    }, false);
   </script>
 </body>
 </html>
