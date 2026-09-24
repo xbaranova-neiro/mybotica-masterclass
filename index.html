@@ -155,21 +155,21 @@
     .opportunity .section-cta p{color:#e5f2e8}
     @media(max-width:700px){.section-cta{align-items:stretch;flex-direction:column;gap:17px;margin-top:32px;padding-top:23px}.section-cta p{font-size:17px}.section-cta .btn{width:100%}}
     @media(prefers-reduced-motion:reduce){.gift-book{transition:none}}
-    .registration-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:12px 24px;background:#042d27d9;backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
+    .registration-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:12px 24px;background:rgba(4,45,39,.85);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
     .registration-modal.is-open{opacity:1;visibility:visible}
-    .registration-modal__dialog{position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr);width:min(720px,100%);height:min(840px,calc(100dvh - 24px));overflow:hidden;overscroll-behavior:contain;background:#f8faf7;border:1px solid #d1e2d6;border-radius:8px;box-shadow:0 28px 80px #001d1899;transform:translateY(18px) scale(.985);transition:transform .22s ease}
+    .registration-modal__dialog{position:relative;display:flex;flex-direction:column;width:720px;max-width:100%;height:840px;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow:hidden;overscroll-behavior:contain;background:#f8faf7;border:1px solid #d1e2d6;border-radius:8px;box-shadow:0 28px 80px #001d1899;transform:translateY(18px) scale(.985);transition:transform .22s ease}
     .registration-modal.is-open .registration-modal__dialog{transform:none}
     .registration-modal__header{padding:20px 76px 15px 30px;border-bottom:1px solid #d1e2d6}
     .registration-modal__eyebrow{display:block;margin-bottom:6px;color:var(--pink);font-size:11px;font-weight:800;text-transform:uppercase}
     .registration-modal__title{margin:0;color:var(--green);font-size:clamp(24px,3.3vw,34px);line-height:1.18}
-    .registration-modal__close{position:absolute;z-index:2;top:18px;right:18px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid #9fbeaa;border-radius:50%;background:#fff;color:var(--green);font:400 31px/1 Arial,sans-serif;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+    .registration-modal__close{position:absolute;z-index:2;top:18px;right:18px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #9fbeaa;border-radius:50%;background:#fff;color:var(--green);font:400 31px/1 Arial,sans-serif;cursor:pointer;transition:background .2s,color .2s,transform .2s}
     .registration-modal__close:hover{background:var(--green);color:#fff;transform:rotate(4deg)}
     .registration-modal__hint{padding:9px 30px;background:#e9f2ec;color:#315f4f;font-size:12px;line-height:1.4;font-weight:700;border-bottom:1px solid #d1e2d6}
     .registration-modal__hint span{color:var(--pink)}
-    .registration-widget{height:auto!important;min-height:0;overflow-y:scroll;scrollbar-gutter:stable;scrollbar-color:#789e8b #edf3ef;overscroll-behavior:contain;padding:12px 18px 34px 24px;background:#fff}
+    .registration-widget{flex:1 1 auto;height:auto!important;min-height:0;overflow-y:auto;scrollbar-gutter:stable;scrollbar-color:#789e8b #edf3ef;overscroll-behavior:contain;padding:12px 18px 34px 24px;background:#fff}
     .registration-widget iframe{display:block;width:100%!important;height:780px!important;min-height:780px!important;overflow:hidden;border:0}
     body.registration-open{overflow:hidden}
-    @media(max-width:560px){.registration-modal{place-items:stretch;padding:0}.registration-modal__dialog{width:100%;height:100dvh;border:0;border-radius:0}.registration-modal__header{padding:16px 68px 12px 18px;background:#f8faf7}.registration-modal__title{font-size:23px}.registration-modal__close{position:fixed;top:9px;right:12px}.registration-modal__hint{padding:8px 18px;font-size:11px}.registration-widget{padding:8px 4px max(24px,env(safe-area-inset-bottom)) 8px}.registration-widget iframe{height:820px!important;min-height:820px!important}}
+    @media(max-width:560px){.registration-modal{align-items:stretch;justify-content:stretch;padding:0}.registration-modal__dialog{width:100%;height:100vh;height:100dvh;max-height:none;border:0;border-radius:0}.registration-modal__header{padding:16px 68px 12px 18px;background:#f8faf7}.registration-modal__title{font-size:23px}.registration-modal__close{position:fixed;top:9px;right:12px}.registration-modal__hint{padding:8px 18px;font-size:11px}.registration-widget{padding:8px 4px 24px 8px;padding-bottom:max(24px,env(safe-area-inset-bottom))}.registration-widget iframe{height:820px!important;min-height:820px!important}}
     @media(prefers-reduced-motion:reduce){.registration-modal,.registration-modal__dialog,.registration-modal__close{transition:none}}
   </style>
 </head>
@@ -229,6 +229,7 @@
 
     const registrationModal = document.getElementById('registration-modal');
     const registrationDialog = registrationModal.querySelector('.registration-modal__dialog');
+    const registrationWidget = registrationModal.querySelector('.registration-widget');
     const registrationClose = document.getElementById('registration-modal-close');
     const registrationOpeners = document.querySelectorAll('[data-registration-open]');
     let registrationTrigger = null;
@@ -239,6 +240,7 @@
       registrationModal.classList.add('is-open');
       registrationModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('registration-open');
+      registrationWidget.scrollTop = 0;
       requestAnimationFrame(() => registrationClose.focus());
     };
 
