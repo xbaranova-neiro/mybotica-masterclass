@@ -7,3 +7,5 @@
 @media(max-width:360px){.header .logo{width:130px}.header nav{margin-left:auto}.hero-bottom{font-size:12px;gap:8px}.hero-bottom span+span:before{margin-right:8px}.eyebrow{font-size:10px;letter-spacing:1.2px}}
 
 .video-error{padding:24px;background:#f7f7ef;text-align:center;color:#123b2e}.video-error button{border:0;font:inherit;cursor:pointer}.video-error p{margin:0 0 16px}
+
+@media(max-width:700px){.hero-art .orbit{display:none}.hero-art{height:410px}.hero-dragon{width:min(78%,285px);height:auto;max-height:none;top:65px;transform:translateX(-50%);animation:none;filter:drop-shadow(0 12px 14px #173f2c10)}.art-label{right:0;top:12px}.bubble-one{top:20px}.bubble-two{bottom:52px}.bubble-three{bottom:8px}}
