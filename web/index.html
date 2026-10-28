@@ -173,39 +173,38 @@
     @media(max-width:560px){.registration-modal{align-items:stretch;justify-content:flex-start;padding:0}.registration-modal__dialog{width:100%;height:100vh;height:100dvh;max-height:none;border:0;border-radius:0}.registration-modal__header{padding:16px 68px 12px 18px;background:#f8faf7}.registration-modal__title{font-size:23px}.registration-modal__close{position:fixed;top:9px;right:12px}.registration-modal__hint{padding:8px 18px;font-size:11px}.registration-widget{padding:8px 4px 24px 8px;padding-bottom:max(24px,env(safe-area-inset-bottom))}.registration-widget iframe{height:820px!important;min-height:820px!important}}
     @media(prefers-reduced-motion:reduce){.registration-modal,.registration-modal__dialog,.registration-modal__close{transition:none}}
   
-/* October visual refresh: the MyBotica mascot accompanies a typographic invitation. */
-:root{--paper:#f5f8f3;--surface:#e4eee3}
-body{background:var(--paper)}
-.top{position:relative;color:var(--green);background:var(--paper)}
-.top-inner{height:90px;border:0}.top .logo{filter:brightness(0) saturate(100%) invert(20%) sepia(30%) saturate(1000%) hue-rotate(110deg)}
-.nav{transform:none;font-size:14px;gap:30px}.nav-register{border:0}
-.hero{display:block;min-height:0;padding:38px 0 48px;background:var(--paper);color:var(--ink)}
-.hero:before,.hero:after,.hero-watermark,.hero-kicker .dot{display:none}
-.hero-inner{display:block;position:relative}
-.hero-copy{max-width:none}
-.hero-kicker{display:block;border:0;padding:0;margin:0 0 22px;color:var(--green);font-size:17px;line-height:1.5;font-weight:600;text-transform:none}
-.hero h1{position:relative;max-width:100%;margin:0 0 30px;font-size:clamp(54px,7.5vw,100px);letter-spacing:-.055em;line-height:1.02;z-index:2}
-.hero-lead{max-width:660px;color:var(--ink);font-size:18px;line-height:1.6;margin-bottom:0}
-.hero-dragon{position:absolute;right:0;top:-36px;bottom:auto;width:260px;height:285px;margin:0;overflow:hidden;background:var(--paper);filter:none;pointer-events:none}
-.hero-dragon video,.hero-dragon .dragon-still{width:100%;height:100%;object-fit:cover;object-position:center 37%;mix-blend-mode:multiply}
-.hero-gift{max-width:650px;width:auto;border:0;padding:16px 20px;background:var(--surface);color:var(--ink);margin-top:28px;gap:16px}
-.hero-gift img{box-shadow:none;border:0;width:42px}.hero-gift-label{font-size:14px;text-transform:none;color:var(--green)}.hero-gift strong{font-size:17px}.hero-gift-more{color:var(--green);font-size:13px}
-.hero-actions{margin-top:24px;gap:12px}.btn{min-height:56px;font-size:15px;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}
-.btn-line{background:var(--surface);border:0;color:var(--green)}
-.date-band{background:var(--green)}.date-inner{min-height:96px;gap:28px}.date-big{font-size:32px}.date-divider{display:none}.date-side{font-size:14px;text-transform:none}.date-side:before{display:none}
-.section{padding:104px 0}.eyebrow,.way-num,.feature-num,.feature-label,.bot-num,.role-counter,.role-num,.visual-label{display:none}
-.title{margin-top:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.035em}.intro{color:var(--ink);font-size:18px}
-.platform{background:#fff}.platform-top{align-items:center}.emotion-dragon{width:170px;margin:0 30px}.ways{display:block;margin-top:42px}.way{display:grid;grid-template-columns:1fr 1fr;gap:35px;min-height:0;padding:30px 0;background:transparent!important;border:0;border-radius:0;color:var(--ink)!important}.way:after{display:none}.way h3{margin:0;font-size:32px}.way p{max-width:none;min-height:0;color:var(--ink)!important;font-size:17px}
-.platform-visual{border:0;border-radius:0;box-shadow:none;margin-top:35px}.visual-left:after{display:none}.visual-head{margin-top:0}.build-flow{border:0}.build-step b{display:none}.build-step small{font-size:15px}
-.practice{background:var(--surface)}.practice-top{align-items:start}.practice-top p{font-size:17px;max-width:430px;color:var(--ink)}.feature{border-radius:0;box-shadow:none;background:#fff;margin-top:40px}.feature:before{display:none}.feature p{font-size:17px}.feature h3{font-size:36px}.bots{border:0}.bots>.bot{grid-template-columns:1fr 1.35fr;border:0;padding:25px 0;gap:30px}.bot h3{font-size:25px}.bot p{color:var(--ink);font-size:17px}
-.opportunity:before{display:none}.roles{display:block;border:0;margin-top:38px}.role,.role+.role{display:grid;grid-template-columns:1fr 1fr;gap:30px;border:0;min-height:0;padding:25px 0}.role h3{margin:0;font-size:29px}.role p{max-width:480px;font-size:17px}
-.gift{background:var(--paper)}.gift-book{box-shadow:none!important;transform:rotate(-4deg)}.gift-lead{font-size:18px}.registration-band{background:var(--pink)}.registration-band:before{display:none}.registration-date{font-size:16px;text-transform:none}.registration-title{font-size:36px}.footer{border:0}
-@media(max-width:1050px){.hero h1{font-size:7.5vw}.hero-dragon{width:210px;height:240px;top:-15px}.hero-lead,.hero-gift{max-width:64%}}
-@media(max-width:760px){.wrap{width:calc(100% - 40px)}.top-inner{height:76px}.nav a:not(.nav-register){display:none}.logo{width:145px}.hero{padding:24px 0 36px}.hero-kicker{font-size:16px;margin-bottom:18px}.hero h1{font-size:clamp(32px,7.7vw,57px);letter-spacing:-.045em;margin-bottom:22px}.hero-dragon{position:relative;float:right;width:110px;height:140px;top:auto;right:auto;margin:-8px -10px 2px 12px}.hero-lead{max-width:none;font-size:16px;line-height:1.6}.hero-gift{clear:both;max-width:none;padding:16px;margin-top:22px}.hero-gift strong{font-size:15px}.hero-actions{clear:both;flex-direction:column;align-items:stretch}.hero-actions .btn{width:100%}.date-inner{min-height:100px;flex-wrap:wrap;gap:8px 20px;padding:20px 0}.date-big{font-size:24px}.date-side{display:block;flex-basis:100%;margin:0;font-size:14px}.section{padding:65px 0}.title{font-size:30px}.intro,.practice-top p{font-size:16px}.emotion-dragon{width:90px;margin:0}.way{grid-template-columns:1fr;gap:12px;padding:22px 0}.way h3{font-size:27px}.way p{font-size:16px}.platform-visual{grid-template-columns:1fr}.feature{min-height:260px;padding:24px}.feature-copy{max-width:100%;padding:0 70px 0 0}.feature h3{font-size:28px}.feature p{font-size:16px;max-width:240px}.poses-dragon{width:135px;right:-18px;top:auto;bottom:-25px}.bots>.bot{grid-template-columns:1fr;gap:10px;padding:22px 0}.bot p{grid-column:auto;font-size:16px}.bot h3{font-size:24px}.role,.role+.role{grid-template-columns:1fr;gap:12px}.role h3{font-size:27px}.role p{font-size:16px}.registration-title{font-size:30px}.build-step{display:block}.build-step strong{margin-top:0}.gift-lead{font-size:16px}}
-@media(max-width:900px){.hero-dragon{display:none}.hero-lead,.hero-gift{max-width:none}.hero h1{font-size:clamp(32px,7.5vw,64px)}}
-@media(prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+/* Restore the original full-height mascot composition; retain a restrained refresh. */
+.hero:before,.hero:after{background-image:none}
+.hero-kicker{border:0;text-transform:none;font-size:15px;padding:0;letter-spacing:0}.hero-kicker .dot{display:none}
+.hero h1{letter-spacing:-.035em;line-height:1.08}
+.hero-gift{border:0;background:#ffffff12;padding:16px 18px;width:min(100%,490px);border-radius:0}
+.hero-gift img{box-shadow:none;border:0}.hero-gift-label{text-transform:none;font-size:13px}
+.hero-actions .btn-line{border:0;background:#ffffff18}
+.way{border:0;border-radius:0;box-shadow:none}.way:after{display:none}
+.platform-visual,.feature{box-shadow:none;border:0;border-radius:0}
+.feature:before,.visual-left:after,.opportunity:before{display:none}
+@media(min-width:901px){.hero{padding-top:116px;padding-bottom:48px}.hero-copy{max-width:54%}.hero h1{font-size:clamp(40px,4.3vw,59px)}.hero-dragon{top:-116px;bottom:-48px;width:42vw;right:-2vw}.hero-lead{font-size:17px}.hero-gift strong{font-size:16px}}
 
-</style>
+/* Rose edition: a berry invitation, pale rose sections and the original large mascot. */
+:root{--green:#7b2850;--dark:#432033;--ink:#482338;--pink:#c43172;--mint:#f6e7ee;--light:#fff9fb;--line:#ead5df}
+body{background:var(--light)}
+.hero{background:#7b2850}.hero:before{display:none}.hero h1{color:#fff}.hero-kicker{color:#ffe1ed}.hero-lead{color:#fff0f6}
+.hero-gift{background:#ffffff14;color:#fff;border-radius:18px}.hero-gift-label{color:#ffd1e5}.hero-gift-more{color:#ffeaf3}
+.top .nav{color:#66213f}.nav-register{background:#7b2850;border-color:#7b2850}.nav-register:hover{background:#9b305c}
+.hero-actions .btn-pink{background:#fff0f6;color:#7b2850}.hero-actions .btn-pink:hover{background:#fff}.hero-actions .btn-line{color:#fff;background:#ffffff19}
+.date-band{background:#bc3b73}.date-side{color:#ffeaf4}.date-inner{min-height:88px}
+.platform{background:#fff9fb}.intro{color:#704b5f}.section{padding-top:80px;padding-bottom:80px}.title{letter-spacing:-.035em}
+.ways{gap:18px}.way{background:#f4e1eb;border-radius:22px;padding:30px;min-height:260px}.way:nth-child(2){background:#eee2e9}.way:nth-child(3){background:#a52e63;color:#fff}.way-num,.way:nth-child(2) .way-num{color:#884064}.way:nth-child(3) .way-num{color:#ffe0ef}.way h3{font-size:34px}.way p,.way:nth-child(2) p{color:#6b4558}
+.platform-visual{border-radius:24px;overflow:hidden}.visual-left{background:#7b2850}.visual-label{color:#ffcee2}.build-flow{border:0}.build-step b,.build-step:nth-child(2) b,.build-step:nth-child(3) b{background:#f6dcea;color:#7b2850}.build-step small{color:#ffe4ef}
+.chat{background:#fff}.chat-head{border-color:#f1dce6;color:#6a2a48}.chat-head i{background:#bc3b73}.chat-head span{color:#9c6680}.bubble.bot{background:#f7e9f0}.bubble.user{background:#efd2e1}.chat-state{border-color:#f1dce6;color:#89576d}
+.practice{background:#f5e9ef}.practice-top p{color:#704b5f}.feature{background:#fff9fb;border-radius:24px;color:#652141;min-height:285px}.feature-num{color:#a45e80}.feature p{color:#704b5f}.feature-label{color:#b62f6a}.bots{border:0}.bots>.bot{border-color:#e6cad8}.bot p{color:#704b5f}.bot-num,.bot:nth-child(2) .bot-num,.bot:nth-child(3) .bot-num,.bot:nth-child(4) .bot-num{color:#ad3a70}
+.opportunity{background:#54213c}.opportunity .intro,.role p{color:#f5dce8}.roles{border:0;gap:18px}.role,.role+.role{border:0;padding:28px;background:#ffffff0d;border-radius:22px}.role-counter{-webkit-text-stroke:0!important;color:#d993b6;font-size:45px}.role-num{color:#f7b8d5}.role h3{font-size:25px}
+.gift{background:#fff9fb}.gift-lead{color:#704b5f}.gift-art{background:#f3dce7!important;border-radius:28px}.gift-benefits span{color:#6c2a49;border-color:#e6cbd8}.gift-book{box-shadow:none!important}.gift-art-label{color:#7b2850}.gift-note{color:#89576d}
+.registration-band{background:#b73770}.registration-band:before{display:none}.registration-status{background:#fff0f6;color:#7b2850;border:0}.registration-status:before{background:#7b2850}.registration-status:hover{background:#fff;color:#7b2850}
+.footer{background:#39212f;border-top:0}.footer-label{color:#f0b2ce}.footer-entity p,.footer-school p{color:#dbc0ce}.footer-bottom{color:#c7a4b7;border-color:#735064}
+@media(max-width:900px){.hero{background:#fff9fb;color:#482338}.hero h1{color:#652141}.hero-kicker{color:#8b3a60}.hero-lead{color:#704b5f}.hero-gift{background:#f3e0ea;color:#652141}.hero-gift-label,.hero-gift-more{color:#9e3a69}.hero-actions .btn-pink{background:#bc3b73;color:#fff}.hero-actions .btn-line{background:#f0dce6;color:#7b2850}.top .logo{filter:brightness(0) saturate(100%) invert(22%) sepia(36%) saturate(1234%) hue-rotate(285deg)}.role,.role+.role{padding:26px}.way{min-height:205px}}
+@media(max-width:560px){.section{padding:60px 0}.way{border-radius:18px;padding:25px}.way h3{font-size:31px}.platform-visual,.feature{border-radius:20px}.hero-gift{padding:14px}.hero-gift strong{font-size:15px}}
+.emotion-dragon{mix-blend-mode:multiply}</style>
 </head>
 <body>
   <header class="top"><div class="wrap top-inner"><a href="#top" aria-label="MyBotica, наверх"><img class="logo" src="https://mybotica.pro/assets/images/logo.svg" alt="MyBotica"></a><nav class="nav" aria-label="Навигация"><a href="#platform">Платформа</a><a href="#practice">На мастер-классе</a><a href="#opportunity">Возможности</a><a class="nav-register" href="https://xeniabaranova-school.ru/pl/lite/widget/widget?id=1658762" data-registration-open>Регистрация</a></nav></div></header>
