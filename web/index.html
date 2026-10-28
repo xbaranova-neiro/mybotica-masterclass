@@ -195,6 +195,8 @@
 /* Copy-fit adjustment only; original palette and visual composition retained. */
 @media(min-width:901px){.hero h1{font-size:clamp(38px,3.85vw,53px)}}
 @media(max-width:560px){.hero h1{font-size:clamp(27px,7.45vw,33px)}.practice .title{font-size:29px}.build-step strong{font-size:18px}}
+
+@media(max-width:360px){.hero h1{font-size:24px}.practice .title{font-size:25px}.registration-title{font-size:24px}}
 </style>
 </head>
 <body>
@@ -259,6 +261,8 @@
     var registrationClose = document.getElementById('registration-modal-close');
     var registrationOpeners = document.querySelectorAll('[data-registration-open]');
     var registrationTrigger = null;
+    var registrationPageRegions = Array.prototype.slice.call(document.querySelectorAll('header.top, main, footer.footer'));
+    var registrationInertState = [];
     var nextFrame = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 0); };
 
     var openRegistration = function (event) {
@@ -268,13 +272,18 @@
       registrationModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('registration-open');
       registrationWidget.scrollTop = 0;
-      nextFrame(function () { registrationClose.focus(); });
+      registrationInertState = registrationPageRegions.map(function (region) { return region.hasAttribute('inert'); });
+      registrationPageRegions.forEach(function (region) { region.setAttribute('inert', ''); });
+      registrationClose.focus();
+      window.setTimeout(function () { if (registrationModal.classList.contains('is-open')) registrationClose.focus(); }, 60);
+      nextFrame(function () { if (registrationModal.classList.contains('is-open')) registrationClose.focus(); });
     };
 
     var closeRegistration = function () {
       registrationModal.classList.remove('is-open');
       registrationModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('registration-open');
+      registrationPageRegions.forEach(function (region, index) { if (!registrationInertState[index]) region.removeAttribute('inert'); });
       if (registrationTrigger && registrationTrigger.focus) registrationTrigger.focus();
     };
 
@@ -286,6 +295,16 @@
       if (!registrationDialog.contains(event.target)) closeRegistration();
     }, false);
     document.addEventListener('keydown', function (event) {
+      var isOpen = registrationModal.classList.contains('is-open');
+      if (isOpen && (event.key === 'Tab' || event.keyCode === 9)) {
+        var modalLast = registrationWidget.querySelector('iframe') || registrationClose;
+        var active = document.activeElement;
+        if (event.shiftKey && (active === registrationClose || !registrationModal.contains(active))) {
+          event.preventDefault(); modalLast.focus();
+        } else if (!event.shiftKey && (active === modalLast || !registrationModal.contains(active))) {
+          event.preventDefault(); registrationClose.focus();
+        }
+      }
       var isEscape = event.key === 'Escape' || event.keyCode === 27;
       if (isEscape && registrationModal.classList.contains('is-open')) closeRegistration();
     }, false);
