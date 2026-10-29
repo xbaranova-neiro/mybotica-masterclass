@@ -6,7 +6,7 @@
 
 Изображения, логотип и шрифты находятся внутри `assets/`; страница не зависит от соседних папок.
 
-Кнопки открывают GetCourse-форму поверх страницы. После успешной регистрации посетитель переходит на страницу «Спасибо» со ссылкой на бота. Отправка контрольной заявки и получение подарков пока не проверялись.
+Кнопки открывают GetCourse-форму поверх страницы. После успешной регистрации посетитель переходит на страницу «Спасибо» со ссылкой на бота; бот направляет в канал, где выдаются оба урока. Отправка контрольной заявки и получение подарков пока не проверялись.
 
 Подвал перенесён из предыдущего мастер-класса MyBotica: реквизиты компании и школы, лицензия школы, ссылки на документы.
 
@@ -33,3 +33,5 @@
 Общий блок Ксении Барановой и Карины Комяк: Ксения ведёт эфир, Карина делится материалами и помогает до эфира. Совместная иллюстрация с дракошей заменяет одиночный портрет ведущей; в публикации только адаптивные WebP, без исходных фотографий.
 
 Registration: every data-register button opens the shared native dialog. GetCourse widget 1675822 loads on first click, retains one iframe across reopenings and receives page query parameters. Provider success message is accepted only from the embedded iframe at https://neyroseti.neiroguru.ru; it redirects the top-level page to https://xeniabaranova-school.ru/sps/neyroseti/thank_mbnov26. Small screens fit the provider's minimum form width. No test registration or consent submission was performed.
+
+Маршрут получения подарков: регистрация → бот → канал → два видеоурока. Бот выдаёт ссылку на канал; сами уроки размещаются в канале.
