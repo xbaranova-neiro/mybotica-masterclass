@@ -1,10 +1,10 @@
 {
   "measurement": "Static file byte sizes, not a network timing benchmark",
-  "original_illustrations_bytes": 9775288,
-  "largest_selected_illustrations_bytes": 766864,
-  "illustration_reduction_percent": 92.2,
+  "original_illustrations_bytes": 9822814,
+  "largest_selected_illustrations_bytes": 772212,
+  "illustration_reduction_percent": 92.1,
   "woff2_fonts_bytes": 39120,
-  "largest_full_page_asset_payload_bytes": 899014,
+  "largest_full_page_asset_payload_bytes": 906165,
   "responsive_image_widths": [
     480,
     900,
