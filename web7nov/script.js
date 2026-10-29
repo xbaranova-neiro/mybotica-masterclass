@@ -1,6 +1,15 @@
 const goals={earn:['Найдите идею для услуги','Выберите задачу заказчика и посмотрите, как работает помощник, которого можно настроить под его работу.'],self:['Выберите помощника для себя','Начните с повторяющейся задачи: подготовка материалов, ответы на вопросы или работа с информацией.']};
 document.querySelectorAll('[data-goal]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-goal]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));const [title,text]=goals[button.dataset.goal];document.getElementById('goal-title').textContent=title;document.getElementById('goal-description').textContent=text;}));
-const dialog=document.getElementById('registration-dialog');document.getElementById('register-button').addEventListener('click',()=>dialog.showModal());document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());document.getElementById('dialog-done').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+const dialog=document.getElementById('registration-dialog');
+// A registration widget can consume this event and preventDefault to replace the preview dialog.
+function openRegistration(trigger){
+ const request=new CustomEvent('mybotica:registration',{cancelable:true,detail:{source:trigger.dataset.register}});
+ if(!document.dispatchEvent(request))return;
+ if(!dialog.open){dialog.showModal();document.documentElement.classList.add('registration-open');}
+}
+document.querySelectorAll('[data-register]').forEach(button=>button.addEventListener('click',()=>openRegistration(button)));
+dialog.addEventListener('close',()=>document.documentElement.classList.remove('registration-open'));
+document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());document.getElementById('dialog-done').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.animate([{opacity:.65,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.7,.2,1)'});observer.unobserve(entry.target);}});},{threshold:.1});document.querySelectorAll('.hero-copy,.hero-art,.gifts-heading,.lesson,.program-road article,.choice-art,.choice-paper,.audience .section-heading,.audience-grid article,.example-art,.example-copy,.portrait,.host-grid h2,.before-steps article,.faq-heading,.join-panel').forEach(element=>observer.observe(element));}
 
 const exampleTabs=[...document.querySelectorAll('[data-example]')];
