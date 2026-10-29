@@ -4,7 +4,7 @@
   "largest_selected_illustrations_bytes": 755054,
   "illustration_reduction_percent": 92.1,
   "woff2_fonts_bytes": 39120,
-  "largest_full_page_asset_payload_bytes": 889658,
+  "largest_full_page_asset_payload_bytes": 894434,
   "responsive_image_widths": [
     480,
     900,
@@ -18,7 +18,8 @@
     "Explicit image dimensions",
     "Two local WOFF2 fonts with font-display:swap and preload",
     "Content-addressed image files and versioned CSS/JS",
-    "No frontend framework or external JS",
+    "No frontend framework; external GetCourse widget loads only on registration click",
     "No raster assets in the examples panel"
-  ]
+  ],
+  "registration_widget": "GetCourse widget 1675822, loaded on demand; third-party payload excluded from static asset totals"
 }
