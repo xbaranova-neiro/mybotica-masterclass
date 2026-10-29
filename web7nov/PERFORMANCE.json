@@ -1,0 +1,24 @@
+{
+  "measurement": "Static file byte sizes, not a network timing benchmark",
+  "original_illustrations_bytes": 9775288,
+  "largest_selected_illustrations_bytes": 766864,
+  "illustration_reduction_percent": 92.2,
+  "woff2_fonts_bytes": 39120,
+  "largest_full_page_asset_payload_bytes": 895475,
+  "responsive_image_widths": [
+    480,
+    900,
+    1400
+  ],
+  "delivery": [
+    "Native responsive srcset/sizes",
+    "Lazy loading for artwork below hero",
+    "Async image decoding",
+    "Priority for hero image",
+    "Explicit image dimensions",
+    "Two local WOFF2 fonts with font-display:swap and preload",
+    "Content-addressed image files and versioned CSS/JS",
+    "No frontend framework or external JS",
+    "No raster assets in the examples panel"
+  ]
+}
