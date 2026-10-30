@@ -35,3 +35,8 @@
 Registration: every data-register button opens the shared native dialog. GetCourse widget 1675822 loads on first click, retains one iframe across reopenings and receives page query parameters. Provider success message is accepted only from the embedded iframe at https://neyroseti.neiroguru.ru; it redirects the top-level page to https://xeniabaranova-school.ru/sps/neyroseti/thank_mbnov26. Small screens fit the provider's minimum form width. No test registration or consent submission was performed.
 
 Маршрут получения подарков: регистрация → бот → канал → два видеоурока. Бот выдаёт ссылку на канал; сами уроки размещаются в канале.
+
+
+## Обновление 30 октября 2026
+
+Тексты обновлены по согласованному документу. Кнопка «Посмотреть примеры» открывает окно с шестью разными сценами: консультация, контент, документы, обучение, рабочие и повседневные задачи. При переключении меняются фотография, переписка и иконка. Есть стрелки, точки и управление с клавиатуры; предусмотрено уменьшение анимации. Каждая фотография занимает 66–98 КБ. Все ресурсы локальные.
