@@ -7,7 +7,13 @@ const widgetStatus=document.getElementById('registration-status');
 const widgetRetry=document.getElementById('registration-retry');
 const widgetOrigin='https://neyroseti.neiroguru.ru';
 const widgetKey='98b4b1bd306b624b448fd5dac51cb40ef2ec89c1';
-const thankYouUrl='https://xeniabaranova-school.ru/sps/neyroseti/thank_mbnov26';
+const thankYouAddress=new URL('https://xeniabaranova-school.ru/sps/neyroseti/thank_mbnov26');
+const landingParams=new URLSearchParams(window.location.search);
+['utm_source','utm_medium','utm_campaign','utm_content','utm_term','yclid'].forEach(key=>{
+ const value=landingParams.get(key);
+ if(value)thankYouAddress.searchParams.set(key,value);
+});
+const thankYouUrl=thankYouAddress.href;
 let widgetStarted=false;
 let widgetTimeout;
 let widgetHeight=540;
