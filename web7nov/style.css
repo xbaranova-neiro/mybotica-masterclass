@@ -79,3 +79,5 @@ dialog{max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:a
 .bot-example-preview[data-scene=daily] .bot-example-question{top:4%}.bot-example-preview[data-scene=daily] .bot-example-answer{top:25%}.bot-example-preview[data-scene=learning] .bot-example-answer{right:1%;width:50%}@media(max-width:700px){.bot-example-preview[data-scene=daily] .bot-example-answer{top:29%}.bot-example-preview[data-scene=learning] .bot-example-answer{width:52%}}
 
 @media(max-width:700px){.bot-example-preview[data-scene=daily] .bot-example-answer{top:auto;bottom:2%}.bot-example-preview[data-scene=daily] .chat-typing{display:none}}
+
+#registration-fallback[hidden]{display:none}#registration-fallback{display:inline-flex;font-size:15px;margin:12px 0 12px 16px}#registration-retry{font-size:15px;padding:14px 22px}

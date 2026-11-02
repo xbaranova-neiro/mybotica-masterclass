@@ -17,12 +17,24 @@ const thankYouUrl=thankYouAddress.href;
 let widgetStarted=false;
 let widgetTimeout;
 let widgetHeight=540;
+let widgetReady=false;
 let formReadyTracked=false;
 let registrationRedirectStarted=false;
+function registrationFrameUrl(){
+ const url=new URL('/pl/lite/widget/widget',widgetOrigin);
+ ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','yclid','sid'].forEach(key=>{
+  const value=landingParams.get(key);if(value)url.searchParams.set(key,value);
+ });
+ url.searchParams.set('id','1675822');
+ url.searchParams.set('ref',document.referrer);
+ url.searchParams.set('loc',window.location.href);
+ return url.href;
+}
+const widgetFallback=document.getElementById('registration-fallback');
+widgetFallback.href=registrationFrameUrl();
 function fitRegistrationWidget(){
  const width=widgetViewport.clientWidth;
  if(!width)return;
- // GetCourse's submit button is 328px wide plus form margins.
  const canvasWidth=Math.max(360,width);
  const scale=width/canvasWidth;
  widgetHost.style.width=canvasWidth+'px';
@@ -32,35 +44,39 @@ function fitRegistrationWidget(){
 if('ResizeObserver' in window)new ResizeObserver(fitRegistrationWidget).observe(widgetViewport);
 else window.addEventListener('resize',fitRegistrationWidget);
 function showWidgetError(){
+ if(widgetReady)return;
  if(window.myboticaTrack)window.myboticaTrack('form_error');
- widgetHost.hidden=true;
- widgetViewport.hidden=true;
+ // A slow frame remains visible and may recover after this message.
  widgetStatus.hidden=false;
- widgetStatus.textContent='Форма пока не загрузилась. Проверьте соединение и попробуйте ещё раз.';
+ widgetStatus.textContent='Загрузка занимает больше времени. Можно подождать, обновить форму или открыть её отдельно.';
  widgetRetry.hidden=false;
+ widgetFallback.hidden=false;
 }
 function loadRegistrationWidget(){
  if(widgetStarted)return;
  widgetStarted=true;
+ widgetReady=false;
+ clearTimeout(widgetTimeout);
  widgetStatus.hidden=false;
  widgetStatus.textContent='Загружаем форму регистрации…';
  widgetRetry.hidden=true;
+ widgetFallback.hidden=true;
  widgetHost.hidden=false;
  widgetViewport.hidden=false;
- widgetHost.replaceChildren();
+ widgetHeight=540;
  widgetHost.style.height='';
+ const frame=document.createElement('iframe');
+ frame.id='mybotica-registration-frame';
+ frame.name='mybotica-registration';
+ frame.title='Регистрация на практикум MyBotica 7 ноября';
+ frame.src=registrationFrameUrl();
+ frame.style.height=widgetHeight+'px';
+ frame.setAttribute('allowfullscreen','');
+ // The provider embed script only inserts this frame and resizes it.
+ // We own that lifecycle here: one frame, one message listener, no accumulated StartWidget handlers.
+ frame.addEventListener('error',()=>{if(widgetHost.querySelector('iframe')===frame)showWidgetError();});
+ widgetHost.replaceChildren(frame);
  fitRegistrationWidget();
- const script=document.createElement('script');
- script.id=widgetKey;
- script.src=widgetOrigin+'/pl/lite/widget/script?id=1675822';
- script.async=true;
- script.addEventListener('load',()=>{
-  document.dispatchEvent(new Event('StartWidget'+widgetKey));
-  const frame=widgetHost.querySelector('iframe');
-  if(frame)frame.title='Регистрация на практикум MyBotica 7 ноября';
- });
- script.addEventListener('error',showWidgetError);
- widgetHost.append(script);
  widgetTimeout=setTimeout(showWidgetError,20000);
 }
 // GetCourse sends this event only after its form processor reports success.
@@ -71,9 +87,12 @@ window.addEventListener('message',event=>{
  let data=event.data;
  if(typeof data==='string'){try{data=JSON.parse(data);}catch{return;}}
  if(!data||typeof data!=='object')return;
- const knownWidget=data.uniqName===widgetKey||(typeof data.uniqName==='string'&&frame.id.startsWith(data.uniqName+'_'));
+ const knownWidget=data.uniqName===widgetKey;
  if(knownWidget&&Number(data.height)>50&&Number(data.height)<10000){
   widgetHeight=Number(data.height);
+  frame.style.height=widgetHeight+'px';
+  widgetReady=true;
+  widgetFallback.hidden=true;
   if(!formReadyTracked){formReadyTracked=true;if(window.myboticaTrack)window.myboticaTrack('form_ready');}
   clearTimeout(widgetTimeout);
   widgetStatus.hidden=true;
