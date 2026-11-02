@@ -65,7 +65,8 @@ window.addEventListener('message',event=>{
  let data=event.data;
  if(typeof data==='string'){try{data=JSON.parse(data);}catch{return;}}
  if(!data||typeof data!=='object')return;
- if(data.uniqName===widgetKey&&Number(data.height)>50){
+ const knownWidget=data.uniqName===widgetKey||(typeof data.uniqName==='string'&&frame.id.startsWith(data.uniqName+'_'));
+ if(knownWidget&&Number(data.height)>50&&Number(data.height)<10000){
   widgetHeight=Number(data.height);
   if(!formReadyTracked){formReadyTracked=true;if(window.myboticaTrack)window.myboticaTrack('form_ready');}
   clearTimeout(widgetTimeout);
