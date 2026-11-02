@@ -11,6 +11,8 @@ const thankYouUrl='https://xeniabaranova-school.ru/sps/neyroseti/thank_mbnov26';
 let widgetStarted=false;
 let widgetTimeout;
 let widgetHeight=540;
+let formReadyTracked=false;
+let registrationRedirectStarted=false;
 function fitRegistrationWidget(){
  const width=widgetViewport.clientWidth;
  if(!width)return;
@@ -24,6 +26,7 @@ function fitRegistrationWidget(){
 if('ResizeObserver' in window)new ResizeObserver(fitRegistrationWidget).observe(widgetViewport);
 else window.addEventListener('resize',fitRegistrationWidget);
 function showWidgetError(){
+ if(window.myboticaTrack)window.myboticaTrack('form_error');
  widgetHost.hidden=true;
  widgetViewport.hidden=true;
  widgetStatus.hidden=false;
@@ -64,6 +67,7 @@ window.addEventListener('message',event=>{
  if(!data||typeof data!=='object')return;
  if(data.uniqName===widgetKey&&Number(data.height)>50){
   widgetHeight=Number(data.height);
+  if(!formReadyTracked){formReadyTracked=true;if(window.myboticaTrack)window.myboticaTrack('form_ready');}
   clearTimeout(widgetTimeout);
   widgetStatus.hidden=true;
   widgetRetry.hidden=true;
@@ -72,7 +76,13 @@ window.addEventListener('message',event=>{
   fitRegistrationWidget();
  }
  if(data.event==='getCourseFormSubmitted'&&data.eventInfo?.inFrame===1){
-  window.location.assign(thankYouUrl);
+  if(registrationRedirectStarted)return;
+  registrationRedirectStarted=true;
+  let redirected=false;
+  const redirect=()=>{if(!redirected){redirected=true;window.location.assign(thankYouUrl);}};
+  setTimeout(redirect,800);
+  if(window.myboticaTrack)window.myboticaTrack('registration_success',{},redirect);
+  else redirect();
  }
 });
 widgetRetry.addEventListener('click',()=>{
