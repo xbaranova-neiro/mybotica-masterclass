@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карточка первого бота · MyBotica</title>
+<style>
+:root { color-scheme:light; --forest:#103e32; --paper:#f6eee1; --pink:#a91f42; }
+* { box-sizing:border-box; }
+body { margin:0; background:#e9e3d8; color:var(--forest); font:1rem/1.5 system-ui,sans-serif; }
+main { width:min(820px,100%); margin:0 auto; padding:clamp(24px,6vw,60px); background:var(--paper); }
+.brand { color:var(--pink); font-weight:750; letter-spacing:.06em; margin:0; }
+h1 { margin:.12em 0; font-size:clamp(2rem,7vw,3.8rem); line-height:1.05; letter-spacing:-.04em; }
+h2 { margin:0 0 .45rem; line-height:1.2; }
+p { margin:.35em 0; }
+.intro { margin:1rem 0 1.5rem; }
+label { display:block; margin:0 0 1rem; font-weight:700; }
+.field { display:block; margin-top:.3rem; padding:.45rem .65rem; min-height:2.55rem; background:#fffaf1; border:1px solid #aeb9a6; border-radius:8px; overflow-wrap:anywhere; font-weight:400; }
+.field:focus-visible, button:focus-visible { outline:3px solid var(--pink); outline-offset:3px; }
+.example { margin-top:1.35rem; padding:1rem 1.15rem; background:#dce7d3; border-radius:10px; }
+.example dl { margin:0; display:grid; grid-template-columns:auto 1fr; column-gap:.7rem; row-gap:.3rem; }
+dt { font-weight:700; }
+dd { margin:0; }
+button { margin-top:1.25rem; padding:.58rem .85rem; border:0; border-radius:8px; background:var(--forest); color:white; font:inherit; font-weight:650; cursor:pointer; }
+@media print {
+  body, main { background:white; }
+  main { width:auto; padding:0; }
+  h1 { font-size:36pt; }
+  button { display:none; }
+  label,.example { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="brand">MyBotica</p>
+  <h1>Карточка первого бота</h1>
+  <p class="intro">Заполните её прямо на мастер-классе. Возьмите одну задачу, на которой сможете сами оценить работу бота.</p>
+  <div id="brief">
+    <label id="who">1. Кому будет помогать бот?<span class="field" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="who"></span></label>
+    <label id="task">2. Какой повторяющийся вопрос или задачу он возьмёт на себя?<span class="field" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="task"></span></label>
+    <label id="materials">3. Какие материалы вы ему дадите?<span class="field" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="materials"></span></label>
+    <label id="handoff">4. Что бот сделает, если ответа в материалах нет?<span class="field" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="handoff"></span></label>
+    <label id="test">5. Какой вопрос вы зададите первым и что хотите услышать в ответе?<span class="field" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="test"></span></label>
+  </div>
+  <section class="example">
+    <h2>Пример с кондитером</h2>
+    <dl>
+      <dt>Для кого</dt><dd>Для тех, кто заказывает торт.</dd>
+      <dt>Задача</dt><dd>Подсказать, за сколько дней делать заказ.</dd>
+      <dt>Материалы</dt><dd>Условия заказа и правила для срочных заказов.</dd>
+      <dt>Если ответа нет</dt><dd>Попросить написать кондитеру, чтобы уточнить свободную дату.</dd>
+      <dt>Первый тест</dt><dd>«Успеете сделать торт на субботу?» Бот объяснит обычный срок и подскажет, где уточнить дату.</dd>
+    </dl>
+  </section>
+  <button type="button" onclick="window.print()">Распечатать или сохранить в PDF</button>
+</main>
+</body>
+</html>
