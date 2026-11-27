@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Подарок практикума MyBotica</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --paper: #fff3da;
+      --green: #063e30;
+      --wine: #a92546;
+      font: 18px/1.5 system-ui, sans-serif;
+      background: var(--green);
+      color: var(--paper);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    main {
+      width: min(100% - 48px, 60rem);
+      margin-inline: auto;
+      padding-block: clamp(2.4rem, 11svh, 6.4rem);
+    }
+    .brand { margin: 0 0 clamp(2rem, 7svh, 4.5rem); font-weight: 720; }
+    h1 {
+      margin: 0 0 1.15rem;
+      font-size: clamp(2.85rem, 9.5vw, 6.6rem);
+      font-weight: 850;
+      letter-spacing: -.06em;
+      line-height: .96;
+    }
+    .description { max-inline-size: 32rem; margin: 0 0 1.65rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-block-size: 3.2rem;
+      min-inline-size: 10.2rem;
+      padding: .6rem 1.2rem;
+      background: var(--paper);
+      color: var(--green);
+      font-weight: 750;
+      text-decoration: none;
+      transition: background-color .18s ease, color .18s ease;
+    }
+    a.action:hover { background: var(--wine); color: var(--paper); }
+    a.action:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
+    @media (max-width: 430px) {
+      .actions { display: grid; }
+      .action { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { .action { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">MyBotica</p>
+    <h1>Заберите подарок</h1>
+    <p class="description">7 видеоуроков «Первый бот в MyBotica» и PDF со 125 готовыми промптами. Выберите мессенджер и нажмите «Запустить» в боте.</p>
+    <nav class="actions" aria-label="Выбрать мессенджер">
+      <a class="action" href="https://t.me/MyBoticapro_bot?start=firstbot">Telegram</a>
+      <a class="action" href="https://max.ru/id027402381827_3_bot?start=firstbot">MAX</a>
+    </nav>
+  </main>
+</body>
+</html>
