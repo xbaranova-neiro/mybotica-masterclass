@@ -4,65 +4,145 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Подарок практикума MyBotica</title>
+  <meta name="theme-color" content="#faf3e6">
+  <meta name="description" content="7 видеоуроков «Первый бот в MyBotica» и PDF со 125 готовыми промптами.">
+  <title>Ваш подарок от MyBotica</title>
   <style>
     :root {
-      color-scheme: dark;
-      --paper: #fff3da;
-      --green: #063e30;
-      --wine: #a92546;
-      font: 18px/1.5 system-ui, sans-serif;
-      background: var(--green);
-      color: var(--paper);
+      --paper: #faf3e6;
+      --ink: #103f31;
+      --forest: #0c4836;
+      --sage: #dce8cb;
+      --berry: #aa2348;
+      --white: #fffaf0;
+      font: 16px/1.5 Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
     }
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; }
-    main {
-      width: min(100% - 48px, 60rem);
-      margin-inline: auto;
-      padding-block: clamp(2.4rem, 11svh, 6.4rem);
+    .wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+    .header { padding-block: clamp(24px, 5vh, 52px); }
+    .logo { display: block; width: clamp(174px, 22vw, 226px); height: auto; }
+    .gift {
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
+      grid-template-areas: "title art" "details art" "actions art";
+      column-gap: clamp(32px, 6vw, 96px);
+      align-items: start;
+      margin-block: clamp(12px, 4vh, 44px) 48px;
     }
-    .brand { margin: 0 0 clamp(2rem, 7svh, 4.5rem); font-weight: 720; }
-    h1 {
-      margin: 0 0 1.15rem;
-      font-size: clamp(2.85rem, 9.5vw, 6.6rem);
+    .title {
+      grid-area: title;
+      margin: 0;
+      font-size: clamp(46px, 6.4vw, 93px);
       font-weight: 850;
-      letter-spacing: -.06em;
+      letter-spacing: -.065em;
       line-height: .96;
     }
-    .description { max-inline-size: 32rem; margin: 0 0 1.65rem; }
-    .actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .title span { display: block; }
+    .details {
+      grid-area: details;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px clamp(22px, 4vw, 48px);
+      margin: 24px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+    .details li { display: grid; align-content: start; }
+    .details strong { font-size: clamp(20px, 2.4vw, 27px); line-height: 1.15; }
+    .details span { font-size: 15px; margin-block-start: 4px; }
+    .art {
+      grid-area: art;
+      align-self: stretch;
+      min-height: 410px;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 4vw, 52px);
+      border-radius: 48% 48% 36px 36px / 41% 41% 36px 36px;
+      background: var(--sage);
+    }
+    .dragon { display: block; width: min(100%, 306px); height: auto; }
+    .choice { grid-area: actions; }
+    .choice p { margin: 0; font-size: 16px; }
+    .choice nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 12px 0;
+    }
     .action {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      justify-content: center;
-      min-block-size: 3.2rem;
-      min-inline-size: 10.2rem;
-      padding: .6rem 1.2rem;
-      background: var(--paper);
-      color: var(--green);
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 54px;
+      padding: 12px clamp(13px, 2.4vw, 22px);
+      border-radius: 16px;
+      background: var(--forest);
+      color: var(--white);
+      font-size: 17px;
       font-weight: 750;
       text-decoration: none;
-      transition: background-color .18s ease, color .18s ease;
+      white-space: nowrap;
+      transition: background-color .18s ease, translate .18s ease;
     }
-    a.action:hover { background: var(--wine); color: var(--paper); }
-    a.action:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
-    @media (max-width: 430px) {
-      .actions { display: grid; }
-      .action { width: 100%; }
+    .action:first-child { background: var(--berry); }
+    .action:hover { background: var(--ink); translate: 0 -2px; }
+    .action:focus-visible { outline: 3px solid var(--berry); outline-offset: 3px; }
+    .action span[aria-hidden] { font-size: 21px; line-height: 1; }
+    @media (max-width: 760px) {
+      .wrap { width: calc(100% - 40px); }
+      .header { padding-block: 24px; }
+      .gift {
+        grid-template-columns: minmax(0, 1fr) clamp(96px, 27vw, 163px);
+        grid-template-areas: "title art" "details details" "actions actions";
+        column-gap: 12px;
+        align-items: center;
+        margin-block-start: 12px;
+      }
+      .title { font-size: clamp(36px, 8.3vw, 62px); }
+      .art {
+        min-height: 0;
+        min-block-size: clamp(112px, 33vw, 202px);
+        padding: 8px;
+        border-radius: 48% 48% 20px 20px / 40% 40% 20px 20px;
+      }
+      .dragon { width: min(100%, 122px); }
+      .details { margin-block: 24px; }
+      .details strong { font-size: 20px; }
+      .details span { font-size: 14px; }
+    }
+    @media (max-width: 360px) {
+      .action { gap: 5px; padding-inline: 10px; font-size: 15px; }
+      .action span[aria-hidden] { font-size: 18px; }
     }
     @media (prefers-reduced-motion: reduce) { .action { transition: none; } }
   </style>
 </head>
 <body>
-  <main>
-    <p class="brand">MyBotica</p>
-    <h1>Заберите подарок</h1>
-    <p class="description">7 видеоуроков «Первый бот в MyBotica» и PDF со 125 готовыми промптами. Выберите мессенджер и нажмите «Запустить» в боте.</p>
-    <nav class="actions" aria-label="Выбрать мессенджер">
-      <a class="action" href="https://t.me/MyBoticapro_bot?start=firstbot">Telegram</a>
-      <a class="action" href="https://max.ru/id027402381827_3_bot?start=firstbot">MAX</a>
-    </nav>
+  <header class="header wrap">
+    <img class="logo" src="assets/mybotica-logo.svg" width="309" height="48" alt="MyBotica">
+  </header>
+  <main class="gift wrap">
+    <h1 class="title"><span>Заберите</span> <span>подарок</span></h1>
+    <ul class="details">
+      <li><strong>7 видеоуроков</strong><span>«Первый бот в MyBotica»</span></li>
+      <li><strong>125 промптов</strong><span>Сборник в PDF</span></li>
+    </ul>
+    <figure class="art">
+      <img class="dragon" src="assets/mybotica-dragon.webp" width="496" height="625" alt="">
+    </figure>
+    <div class="choice">
+      <p>Где вам удобнее получить подарок?</p>
+      <nav aria-label="Выбрать мессенджер">
+        <a class="action" href="https://t.me/MyBoticapro_bot?start=firstbot"><span>В Telegram</span><span aria-hidden="true">↗</span></a>
+        <a class="action" href="https://max.ru/id027402381827_3_bot?start=firstbot"><span>В MAX</span><span aria-hidden="true">↗</span></a>
+      </nav>
+      <p>В боте нажмите «Запустить».</p>
+    </div>
   </main>
 </body>
 </html>
